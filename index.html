@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Impostor Online</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="app">
+<h1>Impostor Online</h1>
+
+
+<div class="card" id="loginScreen">
+<h2>Escolha seu Nick</h2>
+<input id="nickname" placeholder="Seu nick" />
+<button onclick="goToMenu()">Entrar</button>
+</div>
+
+
+<div class="card hidden" id="menuScreen">
+<h2>Menu</h2>
+<button onclick="createRoom()">Criar Sala</button>
+<button onclick="showJoinRoom()">Entrar em Sala</button>
+</div>
+
+
+<div class="card hidden" id="joinRoomScreen">
+<h2>Entrar em Sala</h2>
+<input id="roomCodeInput" placeholder="Código da sala" />
+<button onclick="joinRoom()">Entrar</button>
+<button class="secondary" onclick="backToMenu()">Voltar</button>
+</div>
+
+
+<div class="card hidden" id="lobbyScreen">
+<h2>Sala: <span id="roomCodeDisplay"></span></h2>
+<p>Jogadores:</p>
+<ul id="playerList"></ul>
+<button onclick="startGame()" id="startBtn">Iniciar Jogo</button>
+</div>
+
+
+<div class="card hidden" id="wordScreen">
+<h2>Sua Palavra</h2>
+<p id="yourWord" class="bigWord"></p>
+<button onclick="sendReady()">Estou Pronto</button>
+</div>
+
+
+<div class="card hidden" id="tipScreen">
+<h2>Dê sua dica</h2>
+<input id="tipInput" placeholder="Sua dica" />
+<button onclick="sendTip()">Enviar</button>
+</div>
+
+
+<div class="card hidden" id="voteScreen">
+<h2>Vote no Impostor</h2>
+<ul id="voteList"></ul>
+</div>
+
+
+<div class="card hidden" id="resultScreen">
+<h2>Resultado</h2>
+<p id="resultText"></p>
+<button onclick="backToMenu()">Voltar ao Menu</button>
+</div>
+</div>
+
+
+<script src="client.js"></script>
+</body>
+</html>
